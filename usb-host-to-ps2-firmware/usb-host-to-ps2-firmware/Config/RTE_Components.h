@@ -40,7 +40,7 @@
  * \acme_license_stop
  *
  * Project: usb-host-to-ps2-firmware
- * Target:  ATSAMD21J18A 
+ * Target:  ATSAMD21G18A 
  *
  **/
 
