@@ -153,8 +153,6 @@ void system_init(void)
 {
 	init_mcu();
 
-	// GPIO on PB30
-
 	gpio_set_pin_level(LED0,
 	                   // <y> Initial level
 	                   // <id> pad_initial_level
@@ -166,6 +164,11 @@ void system_init(void)
 	gpio_set_pin_direction(LED0, GPIO_DIRECTION_OUT);
 
 	gpio_set_pin_function(LED0, GPIO_PIN_FUNCTION_OFF);
+	
+	/* Setup USB_HOST_EN line in Metro Express board */
+	gpio_set_pin_level(USB_HOST_EN, true);
+	gpio_set_pin_direction(USB_HOST_EN, GPIO_DIRECTION_OUT);
+	gpio_set_pin_function(USB_HOST_EN, GPIO_PIN_FUNCTION_OFF);	
 
 	USART_0_init();
 

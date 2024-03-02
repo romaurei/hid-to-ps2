@@ -21,10 +21,11 @@
 #define GPIO_PIN_FUNCTION_G 6
 #define GPIO_PIN_FUNCTION_H 7
 
-#define PA04 GPIO(GPIO_PORTA, 4)
-#define PA05 GPIO(GPIO_PORTA, 5)
-#define PA24 GPIO(GPIO_PORTA, 24)
-#define PA25 GPIO(GPIO_PORTA, 25)
-#define LED0 GPIO(GPIO_PORTB, 30)
+#define PA04		GPIO(GPIO_PORTA, 4)  //SERCOM 0 Pad 0 > A3 in Metro Express
+#define PA05		GPIO(GPIO_PORTA, 5)  //SERCOM 0 Pad 1 > A4 in Metro Express
+#define PA24		GPIO(GPIO_PORTA, 24)  //D-
+#define PA25		GPIO(GPIO_PORTA, 25)  //D+
+#define LED0		GPIO(GPIO_PORTA, 17)
+#define USB_HOST_EN GPIO(GPIO_PORTA, 28)  //USB_HOST_EN Line in Metro Express
 
 #endif // ATMEL_START_PINS_H_INCLUDED
