@@ -755,6 +755,9 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="serial_debug.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="usb\class\hid\host\hidhf_mouse.c">
       <SubType>compile</SubType>
     </Compile>
