@@ -18,11 +18,12 @@ extern struct usbhc_driver USB_HOST_CORE_INSTANCE_inst;
 
 void USB_HOST_CORE_INSTANCE_example(void);
 
-#include "hidhf_mouse.h"
+#include "hidhf_controller.h"
 
 extern struct hidhf_mouse USB_HOST_HID_MOUSE_0_inst;
+extern struct hidhf_keyboard USB_HOST_HID_KEYBOARD_0_inst;
 
-void USB_HOST_HID_MOUSE_0_example(void);
+//void USB_HOST_HID_MOUSE_0_example(void);
 
 /**
  * \berif Initialize USB

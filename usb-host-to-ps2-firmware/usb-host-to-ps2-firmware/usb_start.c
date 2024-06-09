@@ -87,33 +87,38 @@ void USB_HOST_CORE_INSTANCE_example(void)
 /** USB Host HID Mouse driver instance */
 struct hidhf_mouse USB_HOST_HID_MOUSE_0_inst;
 
-static void USB_HOST_HID_MOUSE_0_btn_cb(struct hidhf_mouse *mouse, uint8_t btn_state)
-{
-	/* Handle button state changes */
-}
+/** USB Host HID Keyboard driver instance */
+struct hidhf_keyboard USB_HOST_HID_KEYBOARD_0_inst;
 
-static void USB_HOST_HID_MOUSE_0_move_cb(struct hidhf_mouse *mouse, int8_t x, int8_t y, int8_t scroll)
-{
-	/* Handle x, y move or scroll here */
-}
-/**
- * Example of using USB Host HID.
- */
-void USB_HOST_HID_MOUSE_0_example(void)
-{
-	hidhf_mouse_register_callback(
-	    &USB_HOST_HID_MOUSE_0_inst, HIDHF_MOUSE_BTN_CB, (FUNC_PTR)USB_HOST_HID_MOUSE_0_btn_cb);
-	hidhf_mouse_register_callback(
-	    &USB_HOST_HID_MOUSE_0_inst, HIDHF_MOUSE_MOVE_CB, (FUNC_PTR)USB_HOST_HID_MOUSE_0_move_cb);
-	usbhc_start(&USB_HOST_CORE_INSTANCE_inst);
-	while (1) {
-		if (hidhf_mouse_is_enabled(&USB_HOST_HID_MOUSE_0_inst)) {
-			/* Mouse device connected */
-		} else {
-			/* Mouse device disconnected */
-		}
-	}
-}
+/**** CODE SECTION TO DELETE ****/
+//static void USB_HOST_HID_MOUSE_0_btn_cb(struct hidhf_mouse *mouse, uint8_t btn_state)
+//{
+	///* Handle button state changes */
+//}
+//
+//static void USB_HOST_HID_MOUSE_0_move_cb(struct hidhf_mouse *mouse, int8_t x, int8_t y, int8_t scroll)
+//{
+	///* Handle x, y move or scroll here */
+//}
+///**
+ //* Example of using USB Host HID.
+ //*/
+//void USB_HOST_HID_MOUSE_0_example(void)
+//{
+	//hidhf_mouse_register_callback(
+	    //&USB_HOST_HID_MOUSE_0_inst, HIDHF_MOUSE_BTN_CB, (FUNC_PTR)USB_HOST_HID_MOUSE_0_btn_cb);
+	//hidhf_mouse_register_callback(
+	    //&USB_HOST_HID_MOUSE_0_inst, HIDHF_MOUSE_MOVE_CB, (FUNC_PTR)USB_HOST_HID_MOUSE_0_move_cb);
+	//usbhc_start(&USB_HOST_CORE_INSTANCE_inst);
+	//while (1) {
+		//if (hidhf_mouse_is_enabled(&USB_HOST_HID_MOUSE_0_inst)) {
+			///* Mouse device connected */
+		//} else {
+			///* Mouse device disconnected */
+		//}
+	//}
+//}
+/**** END CODE SECTION TO DELETE ****/
 
 void usb_init(void)
 {
@@ -123,5 +128,5 @@ void usb_init(void)
 	           (uint8_t *)USB_HOST_CORE_INSTANCE_ctrl_buf,
 	           CTRL_BUFFER_SIZE);
 
-	hidhf_mouse_init(&USB_HOST_CORE_INSTANCE_inst, &USB_HOST_HID_MOUSE_0_inst);
+	hidhf_controller_init(&USB_HOST_CORE_INSTANCE_inst, &USB_HOST_HID_KEYBOARD_0_inst, &USB_HOST_HID_MOUSE_0_inst);
 }
