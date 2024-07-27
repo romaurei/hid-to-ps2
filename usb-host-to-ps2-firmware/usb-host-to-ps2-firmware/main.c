@@ -34,6 +34,13 @@ int main(void)
 				continue;
 			}
 			gpio_toggle_pin_level(LED0);
+			hid_kbd_output_report_t leds;
+			if (!leds.field.caps_lock) {
+				leds.byte = HID_KBD_CAPS_LOCK;			
+			} else {
+				leds.byte = 0;
+			}
+			hidf_keyboard_send_leds(leds);
 			delay_ms(500);
 		}
 		/* Turn OFF LED if mouse is removed */

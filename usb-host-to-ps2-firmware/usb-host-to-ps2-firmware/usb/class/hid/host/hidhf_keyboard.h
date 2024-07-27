@@ -52,6 +52,6 @@ struct hidhf_keyboard {
 	uint8_t report[CONF_HIDHF_KEYBOARD_RPT_SIZE];
 };
 
-
+void hidf_keyboard_send_leds(hid_kbd_output_report_t leds);
 
 #endif /* HIDHF_KEYBOARD_H_ */
